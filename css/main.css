@@ -1728,11 +1728,25 @@ h1 {
 }
 
 .letter-content {
+    max-height: 250px;        /* limita la altura visible */
+    overflow-y: auto;         /* scroll vertical */
     padding: 16px;
-    font: 500 1rem/1.6 "Segoe UI", system-ui, sans-serif;
+    font: italic 500 1rem/1.7 "Georgia", "Times New Roman", serif;
     color: #ffe7b3;
+    white-space: pre-line;    /* respeta saltos de línea */
+    text-align: center;       /* centra los versos como poema */
+    scrollbar-width: thin;    /* scroll fino en Firefox */
 }
-.letter-content p {
-    margin: 0 0 1em;
+
+/* scroll más discreto en Chrome/Edge */
+.letter-content::-webkit-scrollbar {
+    width: 6px;
+}
+.letter-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 231, 179, 0.5);
+    border-radius: 3px;
+}
+.letter-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 231, 179, 0.8);
 }
 
