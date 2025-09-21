@@ -2,35 +2,47 @@
 var audio = document.querySelector("audio");
 var lyrics = document.querySelector("#lyrics");
 
+audio.volume = 0.4;
+
 // Array de objetos que contiene cada línea y su tiempo de aparición en segundos
 var lyricsData = [
-  { text: "At the time", time: 15 },
-  { text: "The whisper of birds", time: 18 },
-  { text: "Lonely before the sun cried", time: 27 },
-  { text: "Fell from the sky", time: 32 },
-  { text: "Like water drops", time: 33 },
-  { text: "Where I'm now? I don't know why", time: 41 },
-  { text: "Nice butterflies in my hands", time: 47 },
-  { text: "Too much light for twilight", time: 54 },
-  { text: "In the mood for the flowers love", time: 59 },
-  { text: "That vision", time: 67 },
-  { text: "Really strong, blew my mind", time: 72 },
-  { text: "Silence Let me see what it was", time: 78 },
-  { text: "I only want to live in clouds", time: 83 },
-  { text: "Where I'm now? I don't know why", time: 91 },
-  { text: "Nice butterflies in my hands", time: 97 },
-  { text: "Too much light for twilight", time: 104 },
-  { text: "In the mood for the flowers love", time: 108 },
-  { text: "At the time", time: 144 },
-  { text: "The whisper of birds", time: 148 },
-  { text: "Lonely before the sun cried", time: 153 },
-  { text: "Fell from the sky", time: 158 },
-  { text: "Like water drops", time: 164 },
-  { text: "Where I'm now? I don't know why", time: 169 },
-  { text: "Nice butterflies in my hands", time: 176 },
-  { text: "Too much light for twilight", time: 183 },
-  { text: "In the mood for the flowers", time: 188 },
-  { text: "Love.", time: 140 },
+    { text: "One, two", time: 0 },
+    { text: "Steal my heart and hold my tongue", time: 8 },
+    { text: "I feel my time, my time has come", time: 16 },
+    { text: "Let me in, unlock the door", time: 25 },
+    { text: "I never felt this way before", time: 34 },
+
+    { text: "And the wheels just keep on turning", time: 41 },
+    { text: "The drummer begins to drum", time: 44 },
+    { text: "I don't know which way I'm going", time: 48 },
+    { text: "I don't know which way I've come", time: 53 },
+
+    { text: "Hold my head inside your hands", time: 68 },
+    { text: "I need someone who understands", time: 76 },
+    { text: "I need someone, someone who hears", time: 84 },
+    { text: "For you I've waited all these years", time: 91 },
+
+    { text: "For you I'd wait 'til kingdom come", time: 97 },
+    { text: "Until my day, my day is done", time: 106 },
+    { text: "And say you'll come and set me free", time: 113 },
+    { text: "Just say you'll wait, you'll wait for me", time: 122 },
+
+    { text: "In your tears and in your blood", time: 139 },
+    { text: "In your fire and in your flood", time: 148 },
+    { text: "I hear you laugh, I heard you sing", time: 156 },
+    { text: "I wouldn't change a single thing", time: 164 },
+
+    { text: "And the wheels just keep on turning", time: 168 },
+    { text: "The drummers begin to drum", time: 173 },
+    { text: "I don't know which way I'm going", time: 177 },
+    { text: "I don't know what I've become", time: 181 },
+
+    { text: "For you I'd wait 'til kingdom come", time: 186 },
+    { text: "Until my days, my days are done", time: 195 },
+    { text: "Say you'll come and set me free", time: 203 },
+    { text: "Just say you'll wait, you'll wait for me", time: 211 },
+    { text: "Just say you'll wait, you'll wait for me", time: 220 },
+    { text: "Just say you'll wait, you'll wait for me", time: 228 },
 ];
 
 // Animar las letras
@@ -43,7 +55,7 @@ function updateLyrics() {
   if (currentLine) {
     // Calcula la opacidad basada en el tiempo en la línea actual
     var fadeInDuration = 0.1; // Duración del efecto de aparición en segundos
-    var opacity = Math.min(1, (time - currentLine.time) / fadeInDuration);
+    var opacity = Math.min(1, ((time - currentLine.time) / fadeInDuration) + 3);
 
     // Aplica el efecto de aparición
     lyrics.style.opacity = opacity;
